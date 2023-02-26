@@ -18,5 +18,5 @@ class LoginForm extends AsyncForm {
       }
     }
     User.login(data, callback);
+    }
   }
-}

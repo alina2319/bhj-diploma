@@ -4,6 +4,7 @@
  * Имеет свойство URL, равное '/user'.
  * */
 class User {
+
   static url = '/user';
   /**
    * Устанавливает текущего пользователя в
@@ -54,7 +55,7 @@ class User {
    * */
   static login(data, callback) {
     createRequest({
-      url: this.URL + '/login',
+      url: this.url + '/login',
       method: 'POST',
       responseType: 'json',
       data,
@@ -93,11 +94,10 @@ class User {
    * */
   static logout(callback) {
     createRequest({url: this.url + '/logout', 
-    callback: (err, response) => {
-      User.unsetCurrent();
-      callback(err, response);
-    },
-    method: 'POST'});
-
+      callback: (err, response) => {
+        User.unsetCurrent();
+        callback(err, response);
+      },
+      method: 'POST'});
   }
 }

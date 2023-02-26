@@ -1,7 +1,3 @@
-/**
- * Основная функция для совершения запросов
- * на сервер.
- * */
 const createRequest = (options = {}) => {
     let formData = new FormData();
     if (options.method.toUpperCase() != 'GET') {

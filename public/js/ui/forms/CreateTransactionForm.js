@@ -31,6 +31,7 @@ class CreateTransactionForm extends AsyncForm {
       let data = {mail: user.email};
       Account.list(data, callback);
     }
+
   }
 
   /**

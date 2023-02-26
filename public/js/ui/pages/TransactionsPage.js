@@ -10,7 +10,7 @@ class TransactionsPage {
    * Сохраняет переданный элемент и регистрирует события
    * через registerEvents()
    * */
-  constructor( element ) {
+  constructor(element) {
     if (!element) {
       throw new Error('Элемент не должен быть пустым!');
     }
@@ -54,8 +54,8 @@ class TransactionsPage {
    * Если пользователь согласен удалить счёт, вызовите
    * Account.remove, а также TransactionsPage.clear с
    * пустыми данными для того, чтобы очистить страницу.
-   * По успешному удалению необходимо вызвать метод App.updateWidgets() и App.updateForms(),
-   * либо обновляйте только виджет со счетами и формы создания дохода и расхода
+   * По успешному удалению необходимо вызвать метод App.updateWidgets(),
+   * либо обновляйте только виджет со счетами
    * для обновления приложения
    * */
   removeAccount() {
@@ -77,8 +77,8 @@ class TransactionsPage {
    * подтверждеия действия (с помощью confirm()).
    * По удалению транзакции вызовите метод App.update(),
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
-   * */
-  removeTransaction( id ) {
+   * */f
+  removeTransaction(id) {
     let question = confirm('Вы действительно хотите удалить эту транзакцию?');
     if (question) {
       let callback = (error, response) => {
@@ -97,6 +97,7 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
+  //  this.clear();
     this.lastOptions = options;
     let callback = (error, response) => {
       if (!error) {
